@@ -8,4 +8,4 @@ description ''
 project_page ''
 
 ## Add dependencies, if any:
-# dependency 'username/name', '>= 1.2.0'
+dependency 'jfryman/nginx', '>= 0.0.6'

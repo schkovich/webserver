@@ -11,8 +11,12 @@
 # Sample Usage:
 #
 class web_server (
-  $host = $web_server::conf::host, $port = 8080, $user = 'vagrant'
+  $host = $web_server::conf::host, $hostip = $web_server::conf::hostip,
+  $port = 8080, $user = 'vagrant'
 ) inherits web_server::conf {
+
+  # http://www.xenuser.org/open-source-development/using-environment-variables-in-puppet/
+  Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ] }
 
   package { 'git':
     ensure => "present",
@@ -30,5 +34,7 @@ class web_server (
     mode   => 0755,
     require => Class["web_server::user"],
   }
+
+  class { 'web_server::nginx': }
 
 }
