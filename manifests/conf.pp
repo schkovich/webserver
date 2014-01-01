@@ -9,7 +9,7 @@ class web_server::conf {
     #    http://support.rightscale.com/09-Clouds/AWS/02-Amazon_EC2/EC2_Meta-data
     $hostip = $ec2_local_ipv4
   }
-  $host = 'deve.local'
+  $host = 'dev.local'
 #  $port = hiera("web_server::port")
 }
 
