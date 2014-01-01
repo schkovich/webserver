@@ -1,8 +1,7 @@
 class web_server::nginx (
   $pool_name,
   $pool,
-  $client_max_body_size,
-  $mime_types
+  $client_max_body_size
 ) {
 
   class { '::nginx': }
@@ -11,17 +10,12 @@ class web_server::nginx (
     ensure  => 'present',
     members => $pool,
     require => Class['::nginx'],
-    before => File["${nginx::params::nx_conf_dir}/sites-enabled"],
+    before => File["${nginx::params::nx_conf_dir}/sites-enabled"]
   }
-
-#  class {'::nginx::mimetypes':
-#    mime_types => $mime_types
-#  }
 
   file {"${nginx::params::nx_conf_dir}/sites-enabled":
     ensure => 'directory',
   }
 
-  File["${nginx::params::nx_conf_dir}/sites-enabled"]
 
 }
