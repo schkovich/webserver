@@ -10,6 +10,8 @@ class web_server::nginx (
   nginx::resource::upstream { $pool_name :
     ensure  => 'present',
     members => $pool,
+    require => Class['::nginx'],
+    before => File["${nginx::params::nx_conf_dir}/sites-enabled"],
   }
 
 #  class {'::nginx::mimetypes':
@@ -21,6 +23,5 @@ class web_server::nginx (
   }
 
   File["${nginx::params::nx_conf_dir}/sites-enabled"]
-  -> Class['nginx::mimetypes']
 
 }
