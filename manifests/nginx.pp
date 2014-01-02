@@ -7,9 +7,9 @@ class web_server::nginx (
 
   class { '::nginx': }
 
-  class {'::nginx::mimetypes':
-    mime_types => $mime_types
-  }
+#  class {'::nginx::mimetypes':
+#    mime_types => $mime_types
+#  }
 
   file {"${nginx::params::nx_conf_dir}/sites-enabled":
     ensure => 'directory',
