@@ -81,9 +81,4 @@ class web_server::vhosts::test (
     location_custom_cfg => $img_config,
   }
 
-  file {"${nginx::params::nx_conf_dir}/sites-enabled/${host}.conf":
-    ensure => link,
-    target => "${nginx::params::nx_conf_dir}/sites-available/${host}.conf",
-  }
-
 }
