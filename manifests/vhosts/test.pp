@@ -19,7 +19,6 @@ class web_server::vhosts::test (
     listen_port            => $listen_port,
     ssl                    => $ssl,
     try_files              => $try_files,
-    notify               => File["${nginx::params::nx_conf_dir}/sites-enabled/${host}.conf"]
   }
 
   nginx::resource::location { 'test-fpm':
