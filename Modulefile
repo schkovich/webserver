@@ -8,5 +8,5 @@ description ''
 project_page ''
 
 ## Add dependencies, if any:
-## dependency 'jfryman/nginx', '>= 0.0.6'
-dependency 'nodes/php', '>= 0.7.0'
+dependency 'jfryman/nginx', '>= 0.0.7'
+dependency 'nodes/php', '>= 0.8.0'
