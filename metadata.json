@@ -1,13 +1,13 @@
 {
-  "name": "goran-web_server",
+  "name": "development-web_server",
   "version": "0.1.0",
-  "summary": "",
-  "author": "",
-  "description": "",
-  "dependencies": [],
+  "summary": "Web server running on Ubuntu",
+  "author": "Goran Miskovic",
+  "description": "Web server running on Ubuntu managed by Puppet and Vagrant. The box is meant for local development",
+  "dependencies": ["puppetlabs/apache", "nodes/php"],
   "types": [],
   "checksums": {},
-  "source": "",
-  "project_page": "",
-  "license": ""
+  "source": "git@github.com:schkovich/webserver.git",
+  "project_page": "https://github.com/schkovich/webserver/tree/lucid",
+  "license": "http://opensource.org/licenses/mit-license.html"
 }
