@@ -11,7 +11,7 @@
 # Sample Usage:
 #
 class web_server (
-  $host = $web_server::conf::host, $hostip = $web_server::conf::hostip,
+  $server = 'nginx', $host = $web_server::conf::host, $hostip = $web_server::conf::hostip,
   $port = 8080, $user = 'vagrant'
 ) inherits web_server::conf {
 
@@ -35,6 +35,6 @@ class web_server (
     require => Class["web_server::user"],
   }
 
-  class { 'web_server::nginx': }
+  class {"web_server::${server}": }
 
 }
