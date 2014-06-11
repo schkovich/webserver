@@ -10,6 +10,7 @@ class web_server::conf {
     $hostip = $ec2_local_ipv4
   }
   $host = 'dev.local'
+  $user = 'vagrant'
 #  $port = hiera("web_server::port")
 }
 

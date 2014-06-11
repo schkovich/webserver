@@ -1,4 +1,4 @@
-class web_server::vhosts::test (
+class web_server::vhosts::nginx (
   $host,
   $domain,
   $www_root,
@@ -21,7 +21,7 @@ class web_server::vhosts::test (
     try_files              => $try_files,
   }
 
-  nginx::resource::location { 'test-fpm':
+  nginx::resource::location { 'nginx-fpm':
     ensure              => 'present',
     priority            => 599,
     ssl                 => $location_fpm['ssl'],
@@ -38,7 +38,7 @@ class web_server::vhosts::test (
     'deny' => $location_ht['deny']
   }
 
-  nginx::resource::location { 'test-ht':
+  nginx::resource::location { 'nginx-ht':
     ensure        => 'present',
     priority      => 598,
     location      => $location_ht['location'],
@@ -56,7 +56,7 @@ class web_server::vhosts::test (
   'expires' => '30d'
   }
 
-  nginx::resource::location {'test-favicon':
+  nginx::resource::location {'nginx-favicon':
     ensure         => 'present',
     priority       => 597,
     location       => '/favicon.ico',
@@ -64,7 +64,7 @@ class web_server::vhosts::test (
     location_custom_cfg => $off_config,
   }
 
-  nginx::resource::location {'test-robots':
+  nginx::resource::location {'nginx-robots':
     ensure              => 'present',
     priority            => 596,
     location      => '/robots.txt',
@@ -72,7 +72,7 @@ class web_server::vhosts::test (
     location_custom_cfg => $off_config,
   }
 
-  nginx::resource::location {'test-images':
+  nginx::resource::location {'nginx-images':
     ensure              => 'present',
     priority            => 595,
     location      => '~* ^.+.(jpg|jpeg|gif|css|png|js|ico)$',

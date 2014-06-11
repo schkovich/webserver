@@ -12,7 +12,7 @@
 #
 class web_server (
   $server = 'nginx', $host = $web_server::conf::host, $hostip = $web_server::conf::hostip,
-  $port = 8080, $user = 'vagrant'
+  $port = 8080, $user = $web_server::conf::user
 ) inherits web_server::conf {
 
   # http://www.xenuser.org/open-source-development/using-environment-variables-in-puppet/
