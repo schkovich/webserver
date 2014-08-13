@@ -5,7 +5,7 @@
   "author": "Goran Miskovic",
   "description": "",
   "dependencies": [
-      { "name": "jfryman/nginx", "version_requirement": "'>= 0.0.7" },
+      { "name": "jfryman/nginx", "version_requirement": ">= 0.0.7" },
       { "name": "nodes/php", "version_requirement": ">= 0.8.0" }
   ],
   "types": [],
