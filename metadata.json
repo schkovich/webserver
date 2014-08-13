@@ -1,13 +1,16 @@
 {
   "name": "goran-web_server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "",
-  "author": "",
+  "author": "Goran Miskovic",
   "description": "",
-  "dependencies": [],
+  "dependencies": [
+      { "name": "jfryman/nginx", "version_requirement": "'>= 0.0.7" },
+      { "name": "nodes/php", "version_requirement": ">= 0.8.0" }
+  ],
   "types": [],
   "checksums": {},
   "source": "",
   "project_page": "",
-  "license": ""
+  "license": "MIT"
 }
