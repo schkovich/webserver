@@ -1,28 +1,33 @@
 class web_server::php::fpm::pool (
   $pool_name,
-  $listen,
-  $error_log,
+  $ensure,
+  $provider,
   $inifile,
   $settings
 ) {
 
-  include 'php::fpm::daemon'
+  include 'php'
+  include 'php::params'
 
-  php::config { 'php-fpm':
+  class { 'php::fpm':
+    ensure => $ensure,
+    provider => $provider,
     inifile  => $inifile,
     settings => $settings;
   }
 
-  php::fpm::conf { $pool_name:
-    ensure => "present",
-    listen => $listen,
-    error_log => $error_log;
-  }
-
-  php::fpm::conf { 'www':
+  php::fpm::pool { 'www':
     ensure => "absent";
   }
 
-  Class['php::fpm::daemon'] -> Php::Config['php-fpm']
+  php::fpm::pool { $pool_name: }
+
+  Php::Extension <| |> ~> Service['php5-fpm']
+
+  exec { "restart-php5-fpm":
+    command  => "service php5-fpm restart",
+    path => "/bin:/sbin:/usr/bin:/usr/sbin",
+    schedule => hourly
+  }
 
 }
