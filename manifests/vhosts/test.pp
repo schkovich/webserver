@@ -18,12 +18,20 @@ class web_server::vhosts::test (
     index_files            => $index_files,
     listen_port            => $listen_port,
     ssl                    => $ssl,
-    try_files              => $try_files,
+    use_default_location   => false,
+  }
+
+  nginx::resource::location {'test-default':
+    ensure              => 'present',
+    vhost               => $host,
+    location            => '/',
+    location_custom_cfg => {try_files => $try_files},
+    priority            => 590,
   }
 
   nginx::resource::location { 'test-fpm':
     ensure              => 'present',
-    priority            => 599,
+    priority            => 591,
     ssl                 => $location_fpm['ssl'],
     ssl_only            => $location_fpm['ssl_only'],
     location            => $location_fpm['location'],
@@ -40,25 +48,25 @@ class web_server::vhosts::test (
 
   nginx::resource::location { 'test-ht':
     ensure        => 'present',
-    priority      => 598,
+    priority      => 592,
     location      => $location_ht['location'],
     vhost         => $host,
     location_custom_cfg => $deny_config,
   }
 
   $off_config = {
-  'access_log'    => 'off',
-  'log_not_found' => 'off'
+    'access_log'    => 'off',
+    'log_not_found' => 'off'
   }
 
   $img_config = {
-  'access_log'    => 'off',
-  'expires' => '30d'
+    'access_log'    => 'off',
+    'expires' => '30d'
   }
 
   nginx::resource::location {'test-favicon':
     ensure         => 'present',
-    priority       => 597,
+    priority       => 593,
     location       => '/favicon.ico',
     vhost    => $host,
     location_custom_cfg => $off_config,
@@ -66,7 +74,7 @@ class web_server::vhosts::test (
 
   nginx::resource::location {'test-robots':
     ensure              => 'present',
-    priority            => 596,
+    priority            => 594,
     location      => '/robots.txt',
     vhost    => $host,
     location_custom_cfg => $off_config,
