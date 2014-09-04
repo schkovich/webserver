@@ -1,12 +1,12 @@
 {
   "name": "goran-web_server",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "summary": "",
   "author": "Goran Miskovic",
   "description": "",
   "dependencies": [
-      { "name": "jfryman/nginx", "version_requirement": ">= 0.0.7" },
-      { "name": "nodes/php", "version_requirement": ">= 0.8.0" }
+      { "name": "jfryman/nginx", "version_requirement": ">= 0.0.10" },
+      { "name": "nodes/php", "version_requirement": ">= 0.9.0" }
   ],
   "types": [],
   "checksums": {},
