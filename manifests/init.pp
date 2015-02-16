@@ -18,8 +18,14 @@ class web_server (
   # http://www.xenuser.org/open-source-development/using-environment-variables-in-puppet/
   Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ] }
 
+# todo: https://forge.puppetlabs.com/puppetlabs/git
   package { 'git':
     ensure => "present",
+  }
+
+  package {'build-essential':
+    ensure   => 'latest',
+    provider => 'apt'
   }
 
   class {"web_server::user":
