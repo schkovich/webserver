@@ -1,6 +1,6 @@
 {
   "name": "goran-web_server",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "summary": "",
   "author": "Goran Miskovic",
   "description": "",
@@ -8,13 +8,13 @@
       { "name": "jfryman/nginx", "version_requirement": ">= 0.2.1" },
       {
           "name": "nodes/php",
-          "version_requirement": ">= 0.9.0",
+          "version_requirement": ">= 0.0.0",
           "repo" :"'https://github.com/jippi/puppet-php.git'"
       }
   ],
   "types": [],
   "checksums": {},
-  "source": "",
+  "source": "https://github.com/schkovich/webserver.git",
   "project_page": "",
   "license": "MIT"
 }
