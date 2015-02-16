@@ -9,4 +9,4 @@ project_page ''
 
 ## Add dependencies, if any:
 dependency 'jfryman/nginx', '>= 0.2.1'
-dependency 'nodes/php', '>= 0.0.0', 'https://github.com/jippi/puppet-php.git'
+## dependency 'nodes/php', '>= 0.0.0', 'https://github.com/jippi/puppet-php.git'

@@ -6,11 +6,11 @@
   "description": "",
   "dependencies": [
       { "name": "jfryman/nginx", "version_requirement": ">= 0.2.1" },
-      {
-          "name": "nodes/php",
-          "version_requirement": ">= 0.0.0",
-          "repo" :"'https://github.com/jippi/puppet-php.git'"
-      }
+//      {
+//          "name": "nodes/php",
+//          "version_requirement": ">= 0.0.0",
+//          "repo" :"'https://github.com/jippi/puppet-php.git'"
+//      }
   ],
   "types": [],
   "checksums": {},
