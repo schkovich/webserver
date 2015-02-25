@@ -19,5 +19,5 @@ class web_server::php::extensions::curl (
     }
   }
 
-  Package['curl'] -> Class['tombox::php::extensions::curl']
+  Package['curl'] -> Class['web_server::php::extensions::curl']
 }
