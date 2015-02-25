@@ -11,8 +11,11 @@
 # Sample Usage:
 #
 class web_server (
-  $host = $web_server::conf::host, $hostip = $web_server::conf::hostip,
-  $port = 8080, $user = 'vagrant'
+  $host = $web_server::conf::host,
+  $hostip = $web_server::conf::hostip,
+  $port = 8080,
+  $sshuser = $web_server::conf::sshuser,
+  $home = $web_server::conf::home
 ) inherits web_server::conf {
 
   # http://www.xenuser.org/open-source-development/using-environment-variables-in-puppet/
@@ -33,10 +36,10 @@ class web_server (
   }
 
   file {
-    "/home/${user}/opt":
+    $home:
     ensure => directory,
-    group  => $user,
-    owner  => $user,
+    group  => $sshuser,
+    owner  => $sshuser,
     mode   => 0755,
     require => Class["web_server::user"],
   }

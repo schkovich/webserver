@@ -12,4 +12,15 @@ class web_server::conf {
 
   # todo: sounds odd. where would $host be used?
   $host = 'dev.local'
+  # todo: perhaps detect vagrant and or os and give sane defautls?
+  $sshuser = $operatingsystem ? {
+    /(?i-mx:ubuntu)/        => 'ubuntu',
+    /(?i-mx:debian)/        => 'admin',
+    /(?i-mx:centos|fedora|redhat)/ => 'root',
+    default => fail("Unsupported osfamily: ${::osfamily} operatingsystem:
+        ${::operatingsystem}, module ${module_name} only support osfamily
+        RedHat and Debian"
+    )
+  }
+  $home = "/home/${sshuser}"
 }
