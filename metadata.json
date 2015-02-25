@@ -1,16 +1,11 @@
 {
   "name": "goran-web_server",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "summary": "",
   "author": "Goran Miskovic",
   "description": "",
   "dependencies": [
-      { "name": "jfryman/nginx", "version_requirement": ">= 0.2.2" },
-//      {
-//          "name": "nodes/php",
-//          "version_requirement": ">= 0.0.0",
-//          "repo" :"'https://github.com/jippi/puppet-php.git'"
-//      }
+      { "name": "jfryman/nginx", "version_requirement": ">= 0.2.2" }
   ],
   "types": [],
   "checksums": {},

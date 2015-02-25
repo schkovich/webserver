@@ -1,5 +1,5 @@
 name    'goran-web_server'
-version '0.1.11'
+version '0.1.12'
 source 'https://github.com/schkovich/webserver.git'
 author 'Goran Miskovic'
 license 'MIT'
