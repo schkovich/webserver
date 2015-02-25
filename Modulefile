@@ -1,5 +1,5 @@
 name    'goran-web_server'
-version '0.1.10'
+version '0.1.11'
 source 'https://github.com/schkovich/webserver.git'
 author 'Goran Miskovic'
 license 'MIT'
@@ -8,5 +8,5 @@ description ''
 project_page ''
 
 ## Add dependencies, if any:
-dependency 'jfryman/nginx', '>= 0.2.1'
+dependency 'jfryman/nginx', '>= 0.2.2'
 ## dependency 'nodes/php', '>= 0.0.0', 'https://github.com/jippi/puppet-php.git'
