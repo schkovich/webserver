@@ -9,7 +9,7 @@ define web_server::php {
   include '::php::composer'
   include '::php::phpunit'
 
-  Class['php'] -> Class['php::cli']-> Class['php::dev'] -> Class['php::pear']
+  Class['::php'] -> Class['::php::cli']-> Class['::php::dev'] -> Class['::php::pear']
   -> Class['web_server::php::extensions'] -> Class['web_server::php::fpm::pool']
-  -> Class['php::composer'] -> Class['php::phpunit']
+  -> Class['::php::composer'] -> Class['::php::phpunit']
 }
