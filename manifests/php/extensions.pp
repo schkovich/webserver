@@ -6,4 +6,6 @@ class web_server::php::extensions {
   include 'web_server::php::extensions::gd'
   include 'web_server::php::extensions::tidy'
   include 'web_server::php::extensions::solr'
+  include 'web_server::php::extensions::mysql'
+  include 'web_server::php::extensions::xmlrpc'
 }
